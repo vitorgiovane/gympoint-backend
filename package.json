@@ -1,0 +1,20 @@
+{
+  "name": "gympoint-backend",
+  "version": "1.0.0",
+  "description": "Fase 2 do Bootcamp da Rocketseat: Iniciando back-end do Gympoint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorgiovane/gympoint-backend.git"
+  },
+  "keywords": [],
+  "author": "Vitor Giovane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitorgiovane/gympoint-backend/issues"
+  },
+  "homepage": "https://github.com/vitorgiovane/gympoint-backend#readme"
+}

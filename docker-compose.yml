@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  postgres:
+    build:
+      context: ./docker/postgres
+    container_name: "${PROJECT_ID}-postgres"
+    restart: "always"
+    volumes:
+      - ./docker/postgres/data:/var/lib/postgresql/data
+    ports:
+      - "${DB_EXTERNAL_PORT}:${DB_PORT}"
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+  node:
+    container_name: "${PROJECT_ID}-node"
+    build:
+      context: ./
+      dockerfile: ./docker/node/Dockerfile
+    command: nodemon server.js
+    ports:
+      - "${NODE_PORT}:3333"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    restart: "always"
+    volumes:
+      - .:/atmosphere
+    links:
+      - postgres
