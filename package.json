@@ -4,6 +4,8 @@
   "description": "Fase 2 do Bootcamp da Rocketseat: Iniciando back-end do Gympoint",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/server.js",
+    "dev:debug": "nodemon --inspect src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/vitorgiovane/gympoint-backend/issues"
   },
-  "homepage": "https://github.com/vitorgiovane/gympoint-backend#readme"
+  "homepage": "https://github.com/vitorgiovane/gympoint-backend#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4",
+    "sucrase": "^3.10.1"
+  }
 }
