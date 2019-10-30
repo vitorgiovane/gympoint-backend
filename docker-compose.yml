@@ -4,7 +4,7 @@ services:
   postgres:
     build:
       context: ./docker/postgres
-    container_name: "${PROJECT_ID}-postgres"
+    container_name: "${DOCKER_CONTAINER_PREFIX}-postgres"
     restart: "always"
     volumes:
       - ./docker/postgres/data:/var/lib/postgresql/data
@@ -15,13 +15,13 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
   node:
-    container_name: "${PROJECT_ID}-node"
+    container_name: "${DOCKER_CONTAINER_PREFIX}-node"
     build:
       context: ./
       dockerfile: ./docker/node/Dockerfile
-    command: nodemon server.js
+    command: npm run dev:debug
     ports:
-      - "${NODE_PORT}:3333"
+      - "${PORT}:${PORT}"
     environment:
       - NODE_ENV=${NODE_ENV}
     restart: "always"

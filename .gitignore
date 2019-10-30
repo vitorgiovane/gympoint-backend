@@ -65,3 +65,5 @@ typings/
 .history
 
 /docker/postgres/data
+
+.ash_history
